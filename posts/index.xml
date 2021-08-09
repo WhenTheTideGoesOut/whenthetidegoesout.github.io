@@ -6,8 +6,71 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Mon, 07 Jun 2021 00:00:00 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 04 Aug 2021 22:10:25 +0100</lastBuildDate>
 		<atom:link href="https://whenthetidegoesout.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>SQL Blog 003</title>
+			<link>https://whenthetidegoesout.github.io/posts/sql/sql-003/</link>
+			<pubDate>Wed, 04 Aug 2021 22:10:25 +0100</pubDate>
+			
+			<guid>https://whenthetidegoesout.github.io/posts/sql/sql-003/</guid>
+			<description>Approach to SQL Queries In this post I want to address an approach on how to attempt SQL queries I find useful. In the previous posts we have looked at the setting up of a local SQL environent for you to practice on and then how SQL statements are structured and the order of operations. Please feel free to go back and have a quick read.
+Now on to the issue at hand.</description>
+			<content type="html"><![CDATA[<h1 id="approach-to-sql-queries">Approach to SQL Queries</h1>
+<p>In this post I want to address an approach on how to attempt SQL queries I find useful. In the previous posts we have looked at the <a href="http://www.chrismcgoran.com/posts/SQL_001.md">setting up of a local SQL environent</a> for you to practice on and then how <a href="http://www.chrismcgoran.com/posts/SQL_002.md">SQL statements are structured and the order of operations</a>. Please feel free to go back and have a quick read.</p>
+<p>Now on to the issue at hand. How to approach an SQL query.</p>
+<h2 id="1-start-at-the-beginning">1) Start at the beginning.</h2>
+<p>This may sound a bit facetious but it is not. What I mean is, start with the problem you are trying to resolve. What is the question you are trying to ask of the DBMS.</p>
+<p>Now the question or problem you are trying to resolve may originate from a colleague. In which case a meeting will be needed. Things to understand.</p>
+<pre><code>1. What is the question.
+2. Why are you or why are they asking the question.
+3. What is their expectation of the result.
+4. What is the result going to be used for, what will it support.
+</code></pre>
+<p>While the first question is obvious, it is important and equally, the remaining three questions inform the first and can help refine and restructure the question to better resolve the actual problem.</p>
+<h2 id="2-understand-the-data">2) Understand the Data</h2>
+<p>This may be a mute point given your experience and understanding of the data set in question. If you have been working with the database,  day in day out for many years, then it is probably a given that you understand the data. We will progress any way.</p>
+<p>When we say understand the data what we mean is to understand the following:</p>
+<ol>
+<li>The objective of the database at hand.</li>
+<li>The schema of the database. By this we mean how the different tables relate. The primary key field(s) and what each table represents.</li>
+<li>The Data Dictionary, once you understand the objective of the database and the schema or structure of it. It is important to understand the attribute within each of the tables. The rules they must follow etc.</li>
+</ol>
+<p>This step could potentially come before the first in, start at the beginning. It could also be a given and not necessary for every problem.</p>
+<p>The next step is to explore the dataset.</p>
+<h2 id="3-explore-the-data">3. Explore the Data.</h2>
+<p>While at the outset it might seem that if you are working with the database day in day out and have many years experience, this may not be necessary. I believe however, that as the database changes and as the data within it changes this will still need to be completed.</p>
+<p>The objective of this step is to help build an understanding that would allow you to build the right query to resolve the problem.</p>
+<p>If we assume we are working within the one, known database, then commands such as:</p>
+<ol>
+<li><code>SHOW TABLES;</code> will list out all of the tables within the database. You should be able to see the tables described in the schema document, &lsquo;live&rsquo; within the database.</li>
+<li><code>DESCRIBE [table name];</code> will list out the field formats within the table. This should reflect to what is in the datadictionary.</li>
+<li><code>SHOW COLUMNS FROM [table name]</code> will show the field names or column names from the table name supplied.</li>
+<li><code>SELECT COUNT (*) FROM [table name]</code> will return the number of records in a given table.</li>
+<li><code>SELECT * FROM [table name] WHERE [col name] IS NULL OR [col-name] = '';</code>  will return all the rows that have a null or emplty value in the field that was specified by <code>[col name]</code>.</li>
+</ol>
+<p>There are many ways to explore the data within the database but these are a good starting point. These can help with the next step which is to start to think about what the solution will look like.</p>
+<h2 id="4-vizualize-the-solution">4. Vizualize the Solution</h2>
+<p>Now that we have a firm understanding of the data and the problem at hand, it is time to visualize the solution.</p>
+<p>What we mean by this, is really quite simple. Given our understanding of the data and our understanding of the problem, what will the solution look like.</p>
+<p>What is the structure of the query, specifically:-</p>
+<ol>
+<li>What fields do we think we will be selecting?</li>
+<li>Which tables will we take the fields from?</li>
+<li>What conditions will be applied? and</li>
+<li>Will there be any aggregation?</li>
+</ol>
+<p>It is through these steps and steps like these you will start to visulize or have an idea of what the solution will look. This leads perfectly on to step five, the last of the steps in our approach to the problem.</p>
+<h2 id="5-code-and-increment">5. Code and Increment.</h2>
+<p>This step is really quite easy and should be taken as a work in progress.</p>
+<p>In this step, start translating the answers from the questions in step four to SQL and running it.</p>
+<p>Do not be discouraged about not getting it right first time. Run it, and re-run it. If you get errors, stop, think and google.</p>
+<h2 id="wrap-up">Wrap Up</h2>
+<p>This how I try and tackle my SQL problems. Some of my attempts are more successful than others. I try to approach it in this structured approach, in turth, I think, so long as there is structured approach to it you are increasing your chances of creating the right query.</p>
+<p>Go forth and SQL.</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>SQL Blog 002</title>
